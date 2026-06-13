@@ -2,6 +2,14 @@
 framework:
     secret: '%env(APP_SECRET)%'
 
+    # Trust the X-Forwarded-* headers set by the upstream Caddy reverse proxy
+    # (the "shared" network's caddy-caddy-1), so Symfony knows the original
+    # request was HTTPS. Without this, generated absolute URLs (e.g. the
+    # debug toolbar's _wdt fetch) use http:// and get blocked as mixed
+    # content on the https:// page.
+    trusted_proxies: '127.0.0.1,REMOTE_ADDR'
+    trusted_headers: ['x-forwarded-for', 'x-forwarded-host', 'x-forwarded-proto', 'x-forwarded-port', 'x-forwarded-prefix']
+
     # Note that the session will be started ONLY if you read or write from it.
     session: true
 

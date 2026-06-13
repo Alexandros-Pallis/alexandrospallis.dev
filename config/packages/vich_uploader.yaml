@@ -1,0 +1,9 @@
+vich_uploader:
+    db_driver: orm
+    storage: flysystem
+
+    mappings:
+        images:
+            uri_prefix: /uploads/images
+            upload_destination: images.storage
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

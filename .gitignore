@@ -19,6 +19,10 @@
 /assets/vendor/
 ###< symfony/asset-mapper ###
 
+###> vich/uploader-bundle ###
+/public/uploads/
+###< vich/uploader-bundle ###
+
 .php-cs-fixer.cache
 .env
 

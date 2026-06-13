@@ -1,0 +1,37 @@
+<div class="image-picker-modal-header">
+    <input type="text" class="form-control" placeholder="Search images…" value="{{ query }}" data-image-picker-search>
+    <button type="button" class="btn-close" data-image-picker-close aria-label="Close"></button>
+</div>
+
+<div class="image-picker-grid">
+    {% for image in images %}
+        <button type="button" class="image-picker-item" data-image-picker-item
+            data-image-picker-id="{{ image.id }}"
+            data-image-picker-url="{{ vich_uploader_asset(image, 'imageFile') }}"
+            data-image-picker-label="{{ image }}">
+            <img src="{{ vich_uploader_asset(image, 'imageFile') }}" alt="{{ image }}" class="image-picker-thumb">
+            <span class="image-picker-item-label">{{ image }}</span>
+        </button>
+    {% else %}
+        <p class="text-muted">No images found.</p>
+    {% endfor %}
+</div>
+
+{% if pages > 1 %}
+    <nav class="image-picker-pagination">
+        {% for p in 1..pages %}
+            <a href="{{ path('admin_image_picker_index', { q: query, page: p }) }}"
+               data-image-picker-page
+               class="btn btn-sm {{ p == page ? 'btn-primary' : 'btn-outline-secondary' }}">{{ p }}</a>
+        {% endfor %}
+    </nav>
+{% endif %}
+
+<div class="image-picker-upload">
+    <form data-image-picker-upload-form enctype="multipart/form-data">
+        <input type="hidden" name="_token" value="{{ csrf_token('image_picker_upload') }}">
+        <label class="form-label">Upload new image</label>
+        <input type="file" name="imageFile" accept="image/*" class="form-control" required>
+        <button type="submit" class="btn btn-primary btn-sm mt-2">Upload &amp; select</button>
+    </form>
+</div>

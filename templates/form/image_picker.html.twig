@@ -1,0 +1,18 @@
+{% block image_picker_widget %}
+    <div class="image-picker" data-controller="image-picker"
+         data-image-picker-picker-url-value="{{ path('admin_image_picker_index') }}"
+         data-image-picker-upload-url-value="{{ path('admin_image_picker_upload') }}">
+        <input type="hidden" id="{{ id }}" name="{{ full_name }}" value="{{ value }}" data-image-picker-target="input">
+        <div class="image-picker-preview" data-image-picker-target="preview">
+            {% if image_url %}
+                <img src="{{ image_url }}" alt="{{ image }}" class="image-picker-thumb">
+            {% else %}
+                <span class="text-muted">No image selected</span>
+            {% endif %}
+        </div>
+        <div class="image-picker-actions">
+            <button type="button" class="btn btn-secondary btn-sm" data-action="image-picker#open">Choose image</button>
+            <button type="button" class="btn btn-outline-danger btn-sm" data-action="image-picker#clear">Remove</button>
+        </div>
+    </div>
+{% endblock %}

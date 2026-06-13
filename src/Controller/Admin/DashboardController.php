@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminDashboard;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -22,6 +23,11 @@ class DashboardController extends AbstractDashboardController
             ->setTitle('Alexandrospallis Dev');
     }
 
+    public function configureAssets(): Assets
+    {
+        return Assets::new()->addAssetMapperEntry('app');
+    }
+
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
@@ -31,5 +37,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkTo(TimelineEntryCrudController::class, 'Timeline', 'fa fa-timeline');
         yield MenuItem::linkTo(CredentialCrudController::class, 'Credentials', 'fa fa-certificate');
         yield MenuItem::linkTo(TagCrudController::class, 'Tags', 'fa fa-tags');
+        yield MenuItem::linkTo(ImageCrudController::class, 'Images', 'fa fa-image');
     }
 }

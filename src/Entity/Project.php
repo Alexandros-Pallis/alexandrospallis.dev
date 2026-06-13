@@ -30,8 +30,9 @@ class Project
     #[ORM\Column(type: Types::TEXT)]
     private string $summary;
 
-    #[ORM\Column(type: Types::STRING, length: 255, nullable: true)]
-    private ?string $coverImage = null;
+    #[ORM\ManyToOne(targetEntity: Image::class)]
+    #[ORM\JoinColumn(name: 'cover_image_id', referencedColumnName: 'id', nullable: true, onDelete: 'SET NULL')]
+    private ?Image $coverImage = null;
 
     #[ORM\Column(enumType: ProjectStatus::class)]
     private ProjectStatus $status;
@@ -114,12 +115,12 @@ class Project
         return $this;
     }
 
-    public function getCoverImage(): ?string
+    public function getCoverImage(): ?Image
     {
         return $this->coverImage;
     }
 
-    public function setCoverImage(?string $coverImage): static
+    public function setCoverImage(?Image $coverImage): static
     {
         $this->coverImage = $coverImage;
 

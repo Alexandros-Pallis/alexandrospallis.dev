@@ -25,8 +25,9 @@ class SkillCategory
     #[ORM\Column(type: Types::STRING, length: 255, nullable: true)]
     private ?string $subtitle = null;
 
-    #[ORM\Column(type: Types::STRING, length: 255, nullable: true)]
-    private ?string $icon = null;
+    #[ORM\ManyToOne(targetEntity: Image::class)]
+    #[ORM\JoinColumn(name: 'icon_id', referencedColumnName: 'id', nullable: true, onDelete: 'SET NULL')]
+    private ?Image $icon = null;
 
     #[ORM\Column(type: Types::INTEGER)]
     private int $displayOrder = 0;
@@ -71,12 +72,12 @@ class SkillCategory
         return $this;
     }
 
-    public function getIcon(): ?string
+    public function getIcon(): ?Image
     {
         return $this->icon;
     }
 
-    public function setIcon(?string $icon): static
+    public function setIcon(?Image $icon): static
     {
         $this->icon = $icon;
 

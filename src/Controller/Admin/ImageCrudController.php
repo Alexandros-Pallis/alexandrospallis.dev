@@ -14,7 +14,10 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 
-class ImageCrudController extends AbstractCrudController
+/**
+ * @extends AbstractCrudController<Image>
+ */
+final class ImageCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
@@ -25,12 +28,8 @@ class ImageCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->hideOnForm(),
-            ImageField::new('imageName', 'Preview')
-                ->setBasePath('/uploads/images')
-                ->hideOnForm(),
-            Field::new('imageFile', 'Image')
-                ->setFormType(VichImageType::class)
-                ->onlyOnForms(),
+            ImageField::new('imageName', 'Preview')->setBasePath('/uploads/images')->hideOnForm(),
+            Field::new('imageFile', 'Image')->setFormType(VichImageType::class)->onlyOnForms(),
             TextField::new('originalName')->hideOnForm(),
             TextField::new('mimeType')->hideOnForm(),
             IntegerField::new('size')->hideOnForm(),

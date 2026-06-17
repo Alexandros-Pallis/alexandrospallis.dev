@@ -11,7 +11,10 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class SkillCrudController extends AbstractCrudController
+/**
+ * @extends AbstractCrudController<Skill>
+ */
+final class SkillCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {

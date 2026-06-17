@@ -13,7 +13,10 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class SkillCategoryCrudController extends AbstractCrudController
+/**
+ * @extends AbstractCrudController<SkillCategory>
+ */
+final class SkillCategoryCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {

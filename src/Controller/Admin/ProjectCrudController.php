@@ -19,7 +19,10 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
 
-class ProjectCrudController extends AbstractCrudController
+/**
+ * @extends AbstractCrudController<Project>
+ */
+final class ProjectCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {

@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Attribute\Route;
 use Vich\UploaderBundle\Templating\Helper\UploaderHelper;
 
 #[Route('/admin/image-picker')]
-class ImagePickerController extends AbstractController
+final class ImagePickerController extends AbstractController
 {
     private const int PER_PAGE = 12;
 
@@ -24,28 +24,24 @@ class ImagePickerController extends AbstractController
         private readonly ImageRepository $imageRepository,
         private readonly EntityManagerInterface $entityManager,
         private readonly UploaderHelper $uploaderHelper,
-    ) {
-    }
+    ) {}
 
     #[Route('', name: 'admin_image_picker_index', methods: ['GET'])]
     public function index(Request $request): Response
     {
-        $query = trim((string) $request->query->get('q', ''));
+        $query = trim($request->query->get('q', ''));
         $page = max(1, $request->query->getInt('page', 1));
 
-        $qb = $this->imageRepository->createQueryBuilder('i')
-            ->orderBy('i.createdAt', 'DESC');
+        $qb = $this->imageRepository->createQueryBuilder('i')->orderBy('i.createdAt', 'DESC');
 
         if ('' !== $query) {
-            $qb->andWhere('i.originalName LIKE :query OR i.imageName LIKE :query')
-                ->setParameter('query', '%'.$query.'%');
+            $qb->andWhere('i.originalName LIKE :query OR i.imageName LIKE :query')->setParameter(
+                'query',
+                '%' . $query . '%',
+            );
         }
 
-        $total = (int) (clone $qb)
-            ->resetDQLPart('orderBy')
-            ->select('COUNT(i.id)')
-            ->getQuery()
-            ->getSingleScalarResult();
+        $total = (int) (clone $qb)->resetDQLPart('orderBy')->select('COUNT(i.id)')->getQuery()->getSingleScalarResult();
 
         $images = $qb
             ->setFirstResult((max($page, 1) - 1) * self::PER_PAGE)

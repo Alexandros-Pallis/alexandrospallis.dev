@@ -11,7 +11,10 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class TagCrudController extends AbstractCrudController
+/**
+ * @extends AbstractCrudController<Tag>
+ */
+final class TagCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {

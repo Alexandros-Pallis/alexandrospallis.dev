@@ -23,7 +23,13 @@ class Image
     #[ORM\Column(type: Types::STRING, length: 255, nullable: true)]
     private ?string $imageName = null;
 
-    #[Vich\UploadableField(mapping: 'images', fileNameProperty: 'imageName', size: 'size', mimeType: 'mimeType', originalName: 'originalName')]
+    #[Vich\UploadableField(
+        mapping: 'images',
+        fileNameProperty: 'imageName',
+        size: 'size',
+        mimeType: 'mimeType',
+        originalName: 'originalName',
+    )]
     private ?File $imageFile = null;
 
     #[ORM\Column(type: Types::STRING, length: 255, nullable: true)]

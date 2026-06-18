@@ -23,4 +23,5 @@
 ###< vich/uploader-bundle ###
 
 .php-cs-fixer.cache
+.twig-cs-fixer.cache
 .env

@@ -1,0 +1,14 @@
+<nav
+    class="bottom-nav fixed-bottom d-flex d-md-none justify-content-around align-items-center gap-2 p-2 bg-surface-secondary border-top rounded-top-3"
+    aria-label="Mobile navigation"
+>
+    {% for item in menu %}
+        <a
+            href="{{ item.url }}"
+            class="bottom-nav-link d-flex flex-column align-items-center gap-1 px-3 py-1 rounded-4 text-decoration-none{% if item.active %} active{% endif %}"
+        >
+            <i class="ti {{ item.icon }}"></i>
+            <span>{{ item.title }}</span>
+        </a>
+    {% endfor %}
+</nav>

@@ -1,0 +1,25 @@
+@media (max-width: 767.98px) {
+    body {
+        padding-bottom: 5rem;
+    }
+}
+
+.bottom-nav {
+    padding-bottom: calc(var(--spacing-sm) + env(safe-area-inset-bottom));
+}
+
+.bottom-nav-link {
+    color: var(--color-on-surface-variant);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.0375rem;
+}
+
+.bottom-nav-link i {
+    font-size: 1.125rem;
+}
+
+.bottom-nav-link.active {
+    background-color: var(--color-primary-container);
+    color: var(--color-on-primary-container);
+}

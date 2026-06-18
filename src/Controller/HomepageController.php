@@ -14,7 +14,12 @@ final class HomepageController extends AbstractController
     public function index(): Response
     {
         return $this->render('homepage/index.html.twig', [
-            'controller_name' => 'HomepageController',
+            'menu' => [
+                ['title' => 'Home', 'url' => $this->generateUrl('app_homepage'), 'icon' => 'ti-home', 'active' => false],
+                ['title' => 'Skills', 'url' => '#', 'icon' => 'ti-terminal-2', 'active' => false],
+                ['title' => 'Work', 'url' => '', 'icon' => 'ti-code', 'active' => true],
+                ['title' => 'About', 'url' => '#', 'icon' => 'ti-user-circle', 'active' => false],
+            ],
         ]);
     }
 }

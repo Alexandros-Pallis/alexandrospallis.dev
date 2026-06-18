@@ -97,109 +97,111 @@
     --spacing-margin-desktop: 48px;
 }
 
-/* Bootstrap dark theme overrides — maps design tokens onto --bs-* variables */
+/* Bootstrap dark theme overrides — maps design tokens onto --tblr-* variables */
 [data-bs-theme="dark"] {
     /* Body */
-    --bs-body-font-family: var(--font-sans);
-    --bs-font-monospace: var(--font-mono);
-    --bs-body-bg: var(--color-background);
-    --bs-body-bg-rgb: 16, 19, 26;
-    --bs-body-color: var(--color-on-background);
-    --bs-body-color-rgb: 225, 226, 236;
-    --bs-secondary-color: var(--color-on-surface-variant);
-    --bs-tertiary-color: var(--color-outline);
-    --bs-emphasis-color: var(--color-on-surface);
+    --tblr-body-font-family: var(--font-sans);
+    --tblr-font-monospace: var(--font-mono);
+    --tblr-body-bg: var(--color-background);
+    --tblr-body-bg-rgb: 16, 19, 26;
+    --tblr-body-color: var(--color-on-background);
+    --tblr-body-color-rgb: 225, 226, 236;
+    --tblr-secondary-color: var(--color-on-surface-variant);
+    --tblr-tertiary-color: var(--color-outline);
+    --tblr-emphasis-color: var(--color-on-surface);
 
     /* Primary */
-    --bs-primary: #3b82f6;
-    --bs-primary-rgb: 59, 130, 246;
+    --tblr-primary: #3b82f6;
+    --tblr-primary-rgb: 59, 130, 246;
 
     /* Secondary */
-    --bs-secondary: #06b6d4;
-    --bs-secondary-rgb: 6, 182, 212;
+    --tblr-secondary: #06b6d4;
+    --tblr-secondary-rgb: 6, 182, 212;
 
     /* Borders */
-    --bs-border-color: var(--color-outline-variant);
-    --bs-border-color-translucent: rgba(255, 255, 255, 0.1);
+    --tblr-border-color: var(--color-outline-variant);
+    --tblr-border-color-translucent: rgba(255, 255, 255, 0.1);
 
     /* Surface layers */
-    --bs-secondary-bg: var(--color-surface-container-low);
-    --bs-secondary-bg-rgb: 25, 27, 35;
-    --bs-tertiary-bg: var(--color-surface-container);
-    --bs-tertiary-bg-rgb: 29, 32, 39;
+    --tblr-secondary-bg: var(--color-surface-container-low);
+    --tblr-secondary-bg-rgb: 25, 27, 35;
+    --tblr-tertiary-bg: var(--color-surface-container);
+    --tblr-tertiary-bg-rgb: 29, 32, 39;
 
     /* Border radius */
-    --bs-border-radius: var(--rounded);
-    --bs-border-radius-sm: var(--rounded-sm);
-    --bs-border-radius-lg: var(--rounded-md);
-    --bs-border-radius-xl: var(--rounded-lg);
-    --bs-border-radius-xxl: var(--rounded-xl);
-    --bs-border-radius-pill: var(--rounded-full);
+    --tblr-border-radius: var(--rounded);
+    --tblr-border-radius-sm: var(--rounded-sm);
+    --tblr-border-radius-lg: var(--rounded-md);
+    --tblr-border-radius-xl: var(--rounded-lg);
+    --tblr-border-radius-xxl: var(--rounded-xl);
+    --tblr-border-radius-pill: var(--rounded-full);
 
     /* Links */
-    --bs-link-color: var(--color-primary);
-    --bs-link-hover-color: var(--color-primary-fixed);
-    --bs-link-color-rgb: 173, 198, 255;
+    --tblr-link-color: var(--color-primary);
+    --tblr-link-hover-color: var(--color-primary-fixed);
+    --tblr-link-color-rgb: 173, 198, 255;
 
     /* Cards */
-    --bs-card-bg: var(--color-surface-container);
-    --bs-card-border-color: var(--color-outline-variant);
-    --bs-card-cap-bg: var(--color-surface-container-high);
+    --tblr-card-bg: var(--color-surface-container);
+    --tblr-card-border-color: var(--color-outline-variant);
+    --tblr-card-cap-bg: var(--color-surface-container-high);
 
     /* Dropdowns */
-    --bs-dropdown-bg: var(--color-surface-container-high);
-    --bs-dropdown-border-color: var(--color-outline-variant);
-    --bs-dropdown-link-color: var(--color-on-surface);
-    --bs-dropdown-link-hover-bg: var(--color-surface-container-highest);
-    --bs-dropdown-link-active-bg: #3b82f6;
+    --tblr-dropdown-bg: var(--color-surface-container-high);
+    --tblr-dropdown-border-color: var(--color-outline-variant);
+    --tblr-dropdown-link-color: var(--color-on-surface);
+    --tblr-dropdown-link-hover-bg: var(--color-surface-container-highest);
+    --tblr-dropdown-link-active-bg: #3b82f6;
 
     /* Modals */
-    --bs-modal-bg: var(--color-surface-container);
-    --bs-modal-border-color: var(--color-outline-variant);
-    --bs-modal-header-border-color: var(--color-outline-variant);
-    --bs-modal-footer-border-color: var(--color-outline-variant);
+    --tblr-modal-bg: var(--color-surface-container);
+    --tblr-modal-border-color: var(--color-outline-variant);
+    --tblr-modal-header-border-color: var(--color-outline-variant);
+    --tblr-modal-footer-border-color: var(--color-outline-variant);
 
     /* Inputs */
-    --bs-form-control-bg: var(--color-surface-container-low);
-    --bs-form-control-border-color: var(--color-outline-variant);
-    --bs-form-control-disabled-bg: var(--color-surface-container-lowest);
+    --tblr-form-control-bg: var(--color-surface-container-low);
+    --tblr-form-control-border-color: var(--color-outline-variant);
+    --tblr-form-control-disabled-bg: var(--color-surface-container-lowest);
 
     /* Nav */
-    --bs-nav-link-color: var(--color-on-surface-variant);
-    --bs-nav-link-hover-color: var(--color-on-surface);
-    --bs-nav-tabs-border-color: var(--color-outline-variant);
-    --bs-nav-tabs-link-active-bg: var(--color-surface-container);
-    --bs-nav-tabs-link-active-border-color: var(--color-outline-variant);
+    --tblr-nav-link-color: var(--color-on-surface-variant);
+    --tblr-nav-link-hover-color: var(--color-on-surface);
+    --tblr-nav-tabs-border-color: var(--color-outline-variant);
+    --tblr-nav-tabs-link-active-bg: var(--color-surface-container);
+    --tblr-nav-tabs-link-active-border-color: var(--color-outline-variant);
 
     /* Table */
-    --bs-table-bg: transparent;
-    --bs-table-striped-bg: var(--color-surface-container-low);
-    --bs-table-hover-bg: var(--color-surface-container-high);
-    --bs-table-border-color: var(--color-outline-variant);
-    --bs-table-color: var(--color-on-surface);
+    --tblr-table-bg: transparent;
+    --tblr-table-striped-bg: var(--color-surface-container-low);
+    --tblr-table-hover-bg: var(--color-surface-container-high);
+    --tblr-table-border-color: var(--color-outline-variant);
+    --tblr-table-color: var(--color-on-surface);
 
     /* List group */
-    --bs-list-group-bg: var(--color-surface-container);
-    --bs-list-group-border-color: var(--color-outline-variant);
-    --bs-list-group-action-color: var(--color-on-surface-variant);
-    --bs-list-group-action-hover-bg: var(--color-surface-container-high);
-    --bs-list-group-active-bg: #3b82f6;
-    --bs-list-group-active-border-color: #3b82f6;
+    --tblr-list-group-bg: var(--color-surface-container);
+    --tblr-list-group-border-color: var(--color-outline-variant);
+    --tblr-list-group-action-color: var(--color-on-surface-variant);
+    --tblr-list-group-action-hover-bg: var(--color-surface-container-high);
+    --tblr-list-group-active-bg: #3b82f6;
+    --tblr-list-group-active-border-color: #3b82f6;
 
     /* Toast / Alert */
-    --bs-toast-bg: var(--color-surface-container-high);
-    --bs-toast-border-color: var(--color-outline-variant);
-    --bs-toast-header-bg: var(--color-surface-container-highest);
-    --bs-toast-header-border-color: var(--color-outline-variant);
+    --tblr-toast-bg: var(--color-surface-container-high);
+    --tblr-toast-border-color: var(--color-outline-variant);
+    --tblr-toast-header-bg: var(--color-surface-container-highest);
+    --tblr-toast-header-border-color: var(--color-outline-variant);
 
     /* Code */
-    --bs-code-color: var(--color-secondary);
+    --tblr-code-color: var(--color-secondary);
 
     /* HR */
-    --bs-border-color-translucent: var(--color-outline-variant);
+    --tblr-border-color-translucent: var(--color-outline-variant);
 
     /* Tabler overrides — maps design tokens onto --tblr-* variables */
+    --tblr-primary: var(--color-primary);
     --tblr-body-font-family: var(--font-sans);
+    --tblr-body-font-size: 1rem;
     --tblr-font-monospace: var(--font-mono);
     --tblr-body-bg: var(--color-background);
     --tblr-body-color: var(--color-on-background);
@@ -215,29 +217,29 @@
 
 /* Button overrides — Bootstrap bakes btn colors into Sass, CSS vars needed here */
 .btn-primary {
-    --bs-btn-bg: #3b82f6;
-    --bs-btn-border-color: #3b82f6;
-    --bs-btn-hover-bg: #2563eb;
-    --bs-btn-hover-border-color: #2563eb;
-    --bs-btn-active-bg: #1d4ed8;
-    --bs-btn-active-border-color: #1d4ed8;
-    --bs-btn-color: #fff;
-    --bs-btn-hover-color: #fff;
-    --bs-btn-active-color: #fff;
-    --bs-btn-focus-shadow-rgb: 59, 130, 246;
+    --tblr-btn-bg: #3b82f6;
+    --tblr-btn-border-color: #3b82f6;
+    --tblr-btn-hover-bg: #2563eb;
+    --tblr-btn-hover-border-color: #2563eb;
+    --tblr-btn-active-bg: #1d4ed8;
+    --tblr-btn-active-border-color: #1d4ed8;
+    --tblr-btn-color: #fff;
+    --tblr-btn-hover-color: #fff;
+    --tblr-btn-active-color: #fff;
+    --tblr-btn-focus-shadow-rgb: 59, 130, 246;
 }
 
 .btn-secondary {
-    --bs-btn-bg: #06b6d4;
-    --bs-btn-border-color: #06b6d4;
-    --bs-btn-hover-bg: #0891b2;
-    --bs-btn-hover-border-color: #0891b2;
-    --bs-btn-active-bg: #0e7490;
-    --bs-btn-active-border-color: #0e7490;
-    --bs-btn-color: #003640;
-    --bs-btn-hover-color: #003640;
-    --bs-btn-active-color: #fff;
-    --bs-btn-focus-shadow-rgb: 6, 182, 212;
+    --tblr-btn-bg: #06b6d4;
+    --tblr-btn-border-color: #06b6d4;
+    --tblr-btn-hover-bg: #0891b2;
+    --tblr-btn-hover-border-color: #0891b2;
+    --tblr-btn-active-bg: #0e7490;
+    --tblr-btn-active-border-color: #0e7490;
+    --tblr-btn-color: #003640;
+    --tblr-btn-hover-color: #003640;
+    --tblr-btn-active-color: #fff;
+    --tblr-btn-focus-shadow-rgb: 6, 182, 212;
 }
 
 /* Form controls */

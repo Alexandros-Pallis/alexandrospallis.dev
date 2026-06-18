@@ -27,4 +27,8 @@ return [
     '@hotwired/stimulus' => ['version' => '3.2.2'],
     '@symfony/stimulus-bundle' => ['path' => './vendor/symfony/stimulus-bundle/assets/dist/loader.js'],
     '@hotwired/turbo' => ['version' => '8.0.23'],
+    'bootstrap' => ['version' => '5.3.8'],
+    '@popperjs/core' => ['version' => '2.11.8'],
+'@tabler/core' => ['version' => '1.4.0'],
+    '@tabler/core/dist/css/tabler.min.css' => ['version' => '1.4.0', 'type' => 'css'],
 ];

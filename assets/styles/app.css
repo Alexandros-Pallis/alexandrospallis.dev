@@ -1,5 +1,8 @@
+@import './design-system.css';
+
 body {
-    /* background-color: skyblue; */
+    background-color: var(--color-background);
+    color: var(--color-on-background);
 }
 
 .image-picker-preview {
